@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta content="telephone=no" name="format-detection" />
+  <title>U券</title>
+
+  <script>
+
+    // let api = {
+    //       safeArea: {
+    //         top: 0
+    //       }
+    //     }
+    // var bizId = 261
+    // // 线下商城--默认为false
+    // var isMallUnderShop = true
+    // // 线上商城--默认为true
+    // var isMallShop = true
+    // //阿里百川配置urlScheme
+    // var urlScheme = ''
+    // var aliPay = 1
+    // var config = {
+    //   bizId: bizId,
+    //   isMallUnderShop: isMallUnderShop,
+    //   isMallShop: isMallShop,
+    //   aliPay: aliPay,
+    //   urlScheme: urlScheme,
+    //   pcWebDebug: true
+    // }
+    
+  </script>
+  <script src="../script/biz.js"></script>
+  <script>
+   let audioArr=[];//
+    let currentAudio=0;//播放到第几个语音提醒了
+    var timeqishi = ''
+    window.onload = function () {
+      // 要在onload事件中再执行以下语句。否则，在vivo nex等手机的移动网络下开启app时document.documentElement.clientWidth有时为0，
+      var htmlTag = document.getElementsByTagName('html')[0]
+      htmlTag.style.fontSize = (document.documentElement.clientWidth / 7.5) + 'px'
+    }
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
