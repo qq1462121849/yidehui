@@ -11,8 +11,8 @@
       <div style="height:.2rem;background:#f2f2f2;"></div>
       <div class="close-core-body">
         <div class="close-core">
-          <div>姓名</div>
-          <div>{{info.title}}</div>
+          <div style="min-width:1rem;">姓名</div>
+          <div class="text-overflow_1-xzh">{{info.title}}</div>
         </div>
          <div class="close-core">
           <div>商家logo</div>
@@ -146,6 +146,7 @@ export default {
       .close-core-body{
         padding: 0 .3rem;
         .close-core{
+         
           display: flex;
           justify-content: space-between;
           align-items: center;

@@ -838,6 +838,13 @@ export default {
 /*font-size: .24rem;*/
 /*padding: .14rem !important;*/
 /*}*/
+/*字体相关*/
+.text-overflow_1-xzh {
+    /*单行超出省略*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 ::-webkit-scrollbar {
   width: 0px;
 }

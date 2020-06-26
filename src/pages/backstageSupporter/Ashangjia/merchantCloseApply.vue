@@ -20,7 +20,7 @@
         </div>
         <div class="close-core">
           <div>选择提现方式</div>
-          <div class="close-core-color">
+          <div class="close-core-color" >
             <popup-picker  :data="list1" v-model="withType" 
             @on-change="onChange" ></popup-picker>
           </div>
@@ -206,8 +206,11 @@ export default {
             font-size: .3rem;
             font-weight: 500;
           }
-          .close-core-color{
+         .close-core-color{
+           
             color: rgba(231,28,27,1) !important;
+            width: 3rem!important;
+            
           }
         }
       }

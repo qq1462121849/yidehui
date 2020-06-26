@@ -9,28 +9,30 @@
   <title>U券</title>
 
   <script>
-
-    // let api = {
-    //       safeArea: {
-    //         top: 0
-    //       }
-    //     }
-    // var bizId = 261
-    // // 线下商城--默认为false
-    // var isMallUnderShop = true
-    // // 线上商城--默认为true
-    // var isMallShop = true
-    // //阿里百川配置urlScheme
-    // var urlScheme = ''
-    // var aliPay = 1
-    // var config = {
-    //   bizId: bizId,
-    //   isMallUnderShop: isMallUnderShop,
-    //   isMallShop: isMallShop,
-    //   aliPay: aliPay,
-    //   urlScheme: urlScheme,
-    //   pcWebDebug: true
-    // }
+    if(location.host.indexOf('172.16.1.11')!=-1){
+      let api = {
+              safeArea: {
+                top: 0
+              }
+            }
+        var bizId = 261
+        // 线下商城--默认为false
+        var isMallUnderShop = true
+        // 线上商城--默认为true
+        var isMallShop = true
+        //阿里百川配置urlScheme
+        var urlScheme = ''
+        var aliPay = 1
+        var config = {
+          bizId: bizId,
+          isMallUnderShop: isMallUnderShop,
+          isMallShop: isMallShop,
+          aliPay: aliPay,
+          urlScheme: urlScheme,
+          pcWebDebug: true
+        }
+    }
+  
     
   </script>
   <script src="../script/biz.js"></script>

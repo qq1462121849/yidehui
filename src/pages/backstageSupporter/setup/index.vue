@@ -25,8 +25,8 @@
           </div>
         </div>
         <div class="close-core">
-          <div>昵称</div>
-          <div>
+          <div  style="min-width:1rem;">昵称</div>
+          <div  class="text-overflow_1-xzh">
             {{shop.title}}&nbsp;&nbsp;
             <!-- <img class="left" src="./../../../assets/img/bkSupporter/left.png" alt=""> -->
           </div>

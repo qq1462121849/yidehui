@@ -264,29 +264,116 @@ export default {
           if (res.code == 1) {
             this.orderPrintList = res.data
             var orderInfo;
-            orderInfo = "<CA>***"+this.orderPrintList.number+this.orderPrintList.title+"***</CA><BR>";
+            orderInfo = "<CA>**"+this.orderPrintList.number+this.orderPrintList.title+"**</CA><BR>";//这里一直空格到合适
             orderInfo += "<BR><BR>";
-            orderInfo += "<C>"+this.orderPrintList.shopName+"</C><BR><BR>";
-            orderInfo += "<B>"+this.orderPrintList.userAddress+"</B><BR>";
-            orderInfo += "<B>"+this.orderPrintList.userPhone+"</B><BR>";
+            orderInfo += "<CA>"+this.orderPrintList.shopName+"</CA><BR><BR>";
             if(this.orderPrintList.payStatus==1){
-              orderInfo += "<B><C>--已在线付款--</C></B><BR><BR>";
+              orderInfo += "<L><C>--已在线付款--</C></L><BR><BR>";
             } else {
-              orderInfo += "<B><C>--未支付--</C></B><BR><BR>";
+              orderInfo += "<C>--未支付--</C><BR><BR>";
             }
-            orderInfo += "名称　　　　　 单价      数量<BR>";
+            orderInfo += "<C>下单时间："+this.orderPrintList.createtime+"</C><BR>" ;
+             orderInfo += "--------------------------------<BR>";
+             orderInfo +="<A>备注: "+this.orderPrintList.note+"</A><BR>" 
+             orderInfo += "--------------------------------<BR>";
+
+            orderInfo += "名称　　　　　     单价  数量<BR>";
             orderInfo += "--------------------------------<BR>";
             for (var i = 0;i<this.orderPrintList.list.length;i++) {
-              orderInfo += this.orderPrintList.list[i]['goodsName']+"  "+this.orderPrintList.list[i]['price']+"  "+this.orderPrintList.list[i]['count']+"<BR>";
+              // switch(this.orderPrintList.list[i].goodsName.length){
+              //   case 7:
+              //     orderInfo += this.orderPrintList.list[i]['goodsName']+"  "+this.orderPrintList.list[i]['price']+"      "+this.orderPrintList.list[i]['count']+"<BR>";
+              //     break;
+              //   case 6:
+              //     orderInfo += this.orderPrintList.list[i]['goodsName']+"   "+this.orderPrintList.list[i]['price']+"  "+this.orderPrintList.list[i]['count']+"<BR>";
+              //   case 5:
+              //     orderInfo += this.orderPrintList.list[i]['goodsName']+"   "+this.orderPrintList.list[i]['price']+"  "+this.orderPrintList.list[i]['count']+"<BR>";
+
+              // }
+              if(this.orderPrintList.list[i].goodsName.length==7){
+                 if(this.orderPrintList.list[i]['price'].length==4){
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"        "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }else{
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"       "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }
+              }else if(this.orderPrintList.list[i].goodsName.length==8){
+                    if(this.orderPrintList.list[i]['price'].length==4){
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"      "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }else{
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"     "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }
+              }else if(this.orderPrintList.list[i].goodsName.length==9){
+                    if(this.orderPrintList.list[i]['price'].length==4){
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"     "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }else{
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"    "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }
+              }else if(this.orderPrintList.list[i].goodsName.length==10){
+                    if(this.orderPrintList.list[i]['price'].length==4){
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"    "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }else{
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"   "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }
+              }
+              else if(this.orderPrintList.list[i].goodsName.length==6){
+                if(this.orderPrintList.list[i]['price'].length==4){
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"          "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }else{
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"         "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }
+              }else if(this.orderPrintList.list[i].goodsName.length==5){
+                if(this.orderPrintList.list[i]['price'].length==4){
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"            "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }else{
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"           "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }
+              }else if(this.orderPrintList.list[i].goodsName.length==4){
+                if(this.orderPrintList.list[i]['price'].length==4){
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"              "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }else{
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"             "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }
+              }else if(this.orderPrintList.list[i].goodsName.length==3){
+                if(this.orderPrintList.list[i]['price'].length==4){
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"                "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }else{
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"               "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }
+              }else if(this.orderPrintList.list[i].goodsName.length==2){
+                if(this.orderPrintList.list[i]['price'].length==4){
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"                  "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }else{
+                   orderInfo += this.orderPrintList.list[i]['goodsName']+"                 "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                 }
+              }else{//长度为10
+                 if(this.orderPrintList.list[i]['price'].length==4){
+                   orderInfo += this.orderPrintList.list[i]['goodsName'].substr(0,10)+"        "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                   orderInfo += this.orderPrintList.list[i]['goodsName'].substr(10)+"<BR>";
+                 }else{
+                   orderInfo += this.orderPrintList.list[i]['goodsName'].substr(0,10)+"       "+this.orderPrintList.list[i]['price']+"   "+this.orderPrintList.list[i]['count']+"<BR>";
+                    orderInfo += this.orderPrintList.list[i]['goodsName'].substr(10)+"<BR>";
+                 }
+              }
+              
             }
             orderInfo += "--------------------------------<BR>";
             orderInfo += "配送费："+this.orderPrintList.postMoney+"<BR>" ;
             orderInfo += "餐盒费："+this.orderPrintList.boxMoney+"<BR>" ;
             orderInfo += "--------------------------------<BR>";
+
+            
+
             orderInfo += "<L>合计：" + this.orderPrintList.totalPay + "元</L><BR>";
             orderInfo += "<BR><BR>";
-            orderInfo += "<CA><C>***" + this.orderPrintList.number + "***</C></CA><BR><BR><BR>";
-            orderInfo += "<CUT>";
+            orderInfo += "--------------------------------<BR>";
+
+            orderInfo += "<BL>"+this.orderPrintList.userAddress+"</BL><BR>";
+            orderInfo += "<BL>"+this.orderPrintList.userPhone+"</BL><BR><BR>";
+
+            orderInfo += "<CA><C>***" + this.orderPrintList.number + "***</C></CA><BR>";
+            orderInfo += "<C>打印时间："+this.orderPrintList.printtime+"</C><BR>" ;
+            orderInfo += "<BR>----------<CUT>----------<BR><BR>";
+             
             var that = this
             var printModule = api.require('posPrinter');
             var params = { 

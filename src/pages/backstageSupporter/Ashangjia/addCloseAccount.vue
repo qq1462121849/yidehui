@@ -219,6 +219,7 @@ export default {
           }
           .close-core-color{
             color: rgba(231,28,27,1) !important;
+            width: 3rem!important;
           }
         }
       }
